@@ -62,6 +62,11 @@ final class CancelledState implements OrderState {
     public function cancel(Order $o): void  { echo "already cancelled\n"; }
 }
 
+/**
+ * So, on each state is represented by a separate class that implements the OrderState interface.
+ * 
+ * When an action is performed on the order, it also update the state of the order accordingly.
+ */
 $order = new Order('ORD-1');
 $order->ship();     // must pay first
 $order->pay();      // paid
